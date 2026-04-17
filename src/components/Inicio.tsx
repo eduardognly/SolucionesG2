@@ -75,17 +75,8 @@ function Escena() {
 /* ─── Íconos de redes sociales ───────────────────────────────────────── */
 const redesSociales = [
   {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/eduardognly/',
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg>
-    ),
-  },
-  {
     label: 'Correo',
-    href: 'mailto:eduardognly@gmail.com',
+    href: 'mailto:contacto@solucionesg2.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -149,7 +140,7 @@ export default function Inicio() {
               display: 'inline-block', width: '40px', height: '1.5px',
               background: 'var(--neon-cyan)',
             }} />
-            Hola, soy
+            Somos
           </motion.div>
 
           {/* Nombre */}
@@ -167,10 +158,10 @@ export default function Inicio() {
           >
             <span
               className="glitch"
-              data-text="Eduardo"
+              data-text="Soluciones G2"
               style={{ color: 'var(--text-primary)' }}
             >
-              Eduardo
+              Soluciones G2
             </span>
           </motion.h1>
 
@@ -193,11 +184,12 @@ export default function Inicio() {
             <span className="gradient-text">
               <TypeAnimation
                 sequence={[
-                  'Ingeniero en Computación', 2200,
-                  'Desarrollador Full Stack',  2200,
-                  'Desarrollador Bancario',    2200,
-                  'Egresado de la UNAM 🦁',   2200,
-                  'Consultor Tecnológico',     2200,
+                  'Soluciones a la Medida',     2200,
+                  'Sistemas para Empresas',     2200,
+                  'Desarrollo Full Stack',      2200,
+                  'Consultoría Tecnológica',    2200,
+                  'Software para PYMEs',        2200,
+                  'Integración Bancaria',       2200,
                 ]}
                 wrapper="span"
                 speed={55}
@@ -219,8 +211,8 @@ export default function Inicio() {
               marginBottom: '44px',
             }}
           >
-            Ingeniero de software egresado de la UNAM. Creo soluciones tecnológicas
-            a la medida para empresas de todos los tamaños — desde PYMEs hasta grandes corporativos y el sector bancario.
+            Asociación de ingenieros de software especializados en desarrollo a la medida.
+            Construimos soluciones tecnológicas para empresas de todos los tamaños — desde PYMEs hasta grandes corporativos y el sector bancario.
           </motion.p>
 
           {/* Botones CTA */}
@@ -237,7 +229,7 @@ export default function Inicio() {
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </a>
-            <a href="#contact" className="btn-outline">Contactar</a>
+            <a href="#contact" className="btn-outline">Contáctanos</a>
           </motion.div>
 
           {/* Redes sociales */}
@@ -267,7 +259,7 @@ export default function Inicio() {
             ))}
             <span style={{ width: '40px', height: '1px', background: 'var(--border-glass)' }} />
             <a
-              href="mailto:eduardognly@gmail.com"
+              href="mailto:contacto@solucionesg2.com"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.78rem',
@@ -275,7 +267,7 @@ export default function Inicio() {
                 letterSpacing: '0.05em',
               }}
             >
-              eduardognly@gmail.com
+              contacto@solucionesg2.com
             </a>
           </motion.div>
         </div>

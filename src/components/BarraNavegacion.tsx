@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const ELEMENTOS_NAV = [
   { label: 'Inicio', href: '#hero' },
-  { label: 'Sobre Mí', href: '#about' },
+  { label: 'Nosotros', href: '#about' },
   { label: 'Habilidades', href: '#skills' },
   { label: 'Proyectos', href: '#projects' },
   { label: 'Contacto', href: '#contact' },
@@ -82,7 +82,7 @@ export default function BarraNavegacion() {
               backgroundClip: 'text',
             }}
           >
-            {'<E />'}
+            {'<G2 />'}
           </motion.div>
         </a>
 

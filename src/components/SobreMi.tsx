@@ -2,17 +2,17 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
 const lineasCodigo = [
-  { indent: 0, tokens: [{ t: 'keyword', v: 'const' }, { t: 'space', v: ' ' }, { t: 'var', v: 'ingeniero' }, { t: 'op', v: ' = ' }, { t: 'punct', v: '{' }] },
-  { indent: 1, tokens: [{ t: 'key', v: 'nombre' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Eduardo"' }, { t: 'punct', v: ',' }] },
-  { indent: 1, tokens: [{ t: 'key', v: 'titulo' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Ingeniero en Computación"' }, { t: 'punct', v: ',' }] },
-  { indent: 1, tokens: [{ t: 'key', v: 'universidad' }, { t: 'op', v: ': ' }, { t: 'str', v: '"UNAM 🦁"' }, { t: 'punct', v: ',' }] },
-  { indent: 1, tokens: [{ t: 'key', v: 'diplomado' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Desarrollo de Software · UNAM"' }, { t: 'punct', v: ',' }] },
-  { indent: 1, tokens: [{ t: 'key', v: 'empresa_actual' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Banco · Desarrollador de Software"' }, { t: 'punct', v: ',' }] },
+  { indent: 0, tokens: [{ t: 'keyword', v: 'const' }, { t: 'space', v: ' ' }, { t: 'var', v: 'solucionesG2' }, { t: 'op', v: ' = ' }, { t: 'punct', v: '{' }] },
+  { indent: 1, tokens: [{ t: 'key', v: 'nombre' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Soluciones G2"' }, { t: 'punct', v: ',' }] },
+  { indent: 1, tokens: [{ t: 'key', v: 'tipo' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Asociación de Desarrollo de Software"' }, { t: 'punct', v: ',' }] },
+  { indent: 1, tokens: [{ t: 'key', v: 'especialidad' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Soluciones a la medida"' }, { t: 'punct', v: ',' }] },
+  { indent: 1, tokens: [{ t: 'key', v: 'experiencia' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Banca · Empresas · PYMEs"' }, { t: 'punct', v: ',' }] },
   { indent: 1, tokens: [{ t: 'key', v: 'sectores' }, { t: 'op', v: ': ' }, { t: 'punct', v: '[' }] },
   { indent: 2, tokens: [{ t: 'str', v: '"Banca y Finanzas"' }, { t: 'punct', v: ',' }] },
   { indent: 2, tokens: [{ t: 'str', v: '"Pequeñas y Medianas Empresas"' }, { t: 'punct', v: ',' }] },
   { indent: 2, tokens: [{ t: 'str', v: '"Grandes Corporativos"' }, { t: 'punct', v: ',' }] },
   { indent: 1, tokens: [{ t: 'punct', v: '],' }] },
+  { indent: 1, tokens: [{ t: 'key', v: 'stack' }, { t: 'op', v: ': ' }, { t: 'str', v: '"Full Stack · Java · React · Node.js"' }, { t: 'punct', v: ',' }] },
   { indent: 1, tokens: [{ t: 'key', v: 'disponible' }, { t: 'op', v: ': ' }, { t: 'bool', v: 'true' }] },
   { indent: 0, tokens: [{ t: 'punct', v: '}' }] },
 ]
@@ -55,7 +55,7 @@ export default function SobreMi() {
         >
           {/* Título */}
           <motion.h2 className="section-title" variants={variantesElemento}>
-            Sobre <span className="highlight">Mí</span>
+            Quiénes <span className="highlight">Somos</span>
           </motion.h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '48px', alignItems: 'center' }}>
@@ -63,18 +63,17 @@ export default function SobreMi() {
             {/* Columna de texto */}
             <motion.div variants={variantesElemento}>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-muted)', marginBottom: '20px' }}>
-               <span style={{ color: 'var(--neon-cyan)', fontWeight: 600 }}>Ingeniero en Desarrollo de Software egresado de la UNAM</span></p>
+               <span style={{ color: 'var(--neon-cyan)', fontWeight: 600 }}>Soluciones G2 es una asociación de ingenieros de software</span> con experiencia real en el sector bancario y empresarial.</p>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-muted)', marginBottom: '20px' }}>
-                Actualmente trabajo como <strong style={{ color: 'var(--text-primary)' }}>Desarrollador de Software en el sector bancario</strong>,
-                trabajando con sistemas que procesan millones de transacciones diarias con seguridad y confiabilidad.
+                Hemos trabajado en <strong style={{ color: 'var(--text-primary)' }}>sistemas bancarios de alta disponibilidad</strong> que procesan millones de transacciones diarias, lo que nos da una perspectiva única sobre calidad, seguridad y confiabilidad.
               </p>
               <p style={{ fontSize: '1.05rem', lineHeight: 1.85, color: 'var(--text-muted)', marginBottom: '36px' }}>
-                Me especializo en crear <strong style={{ color: 'var(--text-primary)' }}>soluciones tecnológicas a medida</strong> para empresas
+                Nos especializamos en crear <strong style={{ color: 'var(--text-primary)' }}>soluciones tecnológicas a medida</strong> para empresas
                 de todos los tamaños: desde pequeños negocios que necesitan su primera app, hasta{' '}
-                <strong style={{ color: 'var(--text-primary)' }}>grandes empresas</strong> que requieren sistemas escalables.
+                <strong style={{ color: 'var(--text-primary)' }}>grandes corporativos</strong> que requieren sistemas escalables.
               </p>
 
-              {/* Insignia UNAM */}
+              {/* Insignia empresa */}
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -85,9 +84,9 @@ export default function SobreMi() {
                 border: '1px solid rgba(0, 245, 255, 0.2)',
                 marginBottom: '28px',
               }}>
-                <span style={{ fontSize: '1.2rem' }}>🦁</span>
+                <span style={{ fontSize: '1.2rem' }}>⚡</span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.82rem', color: 'var(--text-primary)', fontWeight: 600 }}>
-                  Universidad Nacional Autónoma de México
+                  Ingenieros con experiencia en Banca · PYMEs · Corporativos
                 </span>
               </div>
 
@@ -95,17 +94,8 @@ export default function SobreMi() {
                 <a href="#projects" className="btn-primary" style={{ fontSize: '0.9rem', padding: '10px 22px' }}>
                   Ver Proyectos
                 </a>
-                <a
-                  href="/cv.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline"
-                  style={{ fontSize: '0.9rem', padding: '10px 22px' }}
-                >
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-                  </svg>
-                  Descargar CV
+                <a href="#contact" className="btn-outline" style={{ fontSize: '0.9rem', padding: '10px 22px' }}>
+                  Contáctanos
                 </a>
               </div>
             </motion.div>
@@ -128,7 +118,7 @@ export default function SobreMi() {
                   {['#ff5f56', '#ffbd2e', '#27c93f'].map(c => (
                     <span key={c} style={{ width: '10px', height: '10px', borderRadius: '50%', background: c, opacity: 0.85 }} />
                   ))}
-                  <span style={{ marginLeft: '8px', fontSize: '0.75rem', color: 'var(--text-dim)' }}>perfil.ts</span>
+                  <span style={{ marginLeft: '8px', fontSize: '0.75rem', color: 'var(--text-dim)' }}>empresa.ts</span>
                 </div>
 
                 {/* Líneas de código */}

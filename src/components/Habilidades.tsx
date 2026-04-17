@@ -193,7 +193,7 @@ export default function Habilidades() {
           animate={estaEnVista ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Tecnologías <span className="highlight">que uso</span>
+          Tecnologías <span className="highlight">que usamos</span>
         </motion.h2>
 
         {/* Pestañas de categoría */}
@@ -281,8 +281,8 @@ export default function Habilidades() {
               }}
             >
               {'// '}
-              {activo === 'Backend' && 'Desarrollo la lógica del negocio y los servicios que mueven todo'}
-              {activo === 'Bases de Datos' && 'Diseño y administro los almacenes de información de cada sistema'}
+              {activo === 'Backend' && 'Desarrollamos la lógica del negocio y los servicios que mueven todo'}
+              {activo === 'Bases de Datos' && 'Diseñamos y administramos los almacenes de información de cada sistema'}
             </motion.p>
           </motion.div>
         </AnimatePresence>
