@@ -20,8 +20,8 @@ const infoContacto = [
       </svg>
     ),
     etiqueta: 'Email',
-    valor: 'contacto@solucionesg2.com',
-    href: 'mailto:contacto@solucionesg2.com',
+    valor: 'solucionesg2.contacto@gmail.com',
+    href: 'mailto:solucionesg2.contacto@gmail.com',
     color: '#00f5ff',
   },
   {
@@ -333,7 +333,7 @@ export default function Contacto() {
                       color: '#ff006e',
                     }}
                   >
-                    ✗ Algo salió mal. Escríbenos directamente a contacto@solucionesg2.com
+                    ✗ Algo salió mal. Escríbenos directamente a solucionesg2.contacto@gmail.com
                   </motion.p>
                 )}
               </form>

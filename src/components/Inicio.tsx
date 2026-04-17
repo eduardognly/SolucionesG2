@@ -76,7 +76,7 @@ function Escena() {
 const redesSociales = [
   {
     label: 'Correo',
-    href: 'mailto:contacto@solucionesg2.com',
+    href: 'mailto:solucionesg2.contacto@gmail.com',
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -259,7 +259,7 @@ export default function Inicio() {
             ))}
             <span style={{ width: '40px', height: '1px', background: 'var(--border-glass)' }} />
             <a
-              href="mailto:contacto@solucionesg2.com"
+              href="mailto:solucionesg2.contacto@gmail.com"
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '0.78rem',
@@ -267,7 +267,7 @@ export default function Inicio() {
                 letterSpacing: '0.05em',
               }}
             >
-              contacto@solucionesg2.com
+              solucionesg2.contacto@gmail.com
             </a>
           </motion.div>
         </div>
