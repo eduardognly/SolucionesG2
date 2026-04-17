@@ -1,21 +1,21 @@
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import About from './components/About'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import Contact from './components/Contact'
+import BarraNavegacion from './components/BarraNavegacion'
+import Inicio from './components/Inicio'
+import SobreMi from './components/SobreMi'
+import Habilidades from './components/Habilidades'
+import Proyectos from './components/Proyectos'
+import Contacto from './components/Contacto'
 
 function App() {
   return (
     <div className="app">
-      <Navbar />
+      <BarraNavegacion />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
+        <Inicio />
+        <SobreMi />
+        <Habilidades />
+        <Proyectos />
+        <Contacto />
       </main>
       <footer className="footer">
         <div className="footer-content">
