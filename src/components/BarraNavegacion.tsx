@@ -6,6 +6,7 @@ const ELEMENTOS_NAV = [
   { label: 'Nosotros', href: '#about' },
   { label: 'Habilidades', href: '#skills' },
   { label: 'Proyectos', href: '#projects' },
+  { label: 'Servicios', href: '#services' },
   { label: 'Contacto', href: '#contact' },
 ]
 
