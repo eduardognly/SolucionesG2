@@ -16,17 +16,17 @@ interface Proyecto {
 const proyectos: Proyecto[] = [
   {
     id: 1,
-    titulo: 'Portal de Banca en Línea',
-    descripcion: 'Plataforma web segura para que clientes consulten saldos, hagan transferencias y paguen servicios desde cualquier dispositivo.',
-    descripcionLarga: 'Sistema completo de banca digital con autenticación de doble factor, consulta de movimientos, transferencias interbancarias (SPEI), pago de servicios y descarga de estados de cuenta en PDF. Desarrollado bajo estrictos estándares de seguridad bancaria.',
-    etiquetas: ['Angular', 'Java', 'Spring Boot', 'Sybase', 'REST API'],
+    titulo: 'Sistema de Inventarios',
+    descripcion: 'Aplicación para que tiendas y empresas pequeñas controlen su stock, registren entradas y salidas, y reciban alertas cuando un producto está por agotarse.',
+    descripcionLarga: 'Solución pensada para negocios que manejan productos físicos y necesitan dejar de llevar el inventario en papel o Excel. Permite registrar productos con precio, categoría y cantidad, hacer ajustes de stock, ver el historial de movimientos y generar reportes de existencias.',
+    etiquetas: ['React', 'Node.js', 'MySQL', 'TypeScript', 'REST API'],
     color: '#00f5ff',
-    icono: '🏦',
-    enlaceVivo: 'https://example.com',
+    icono: '📦',
+    enlaceVivo: '',
     destacados: [
-      'Más de 50,000 usuarios activos diarios',
-      'Transferencias SPEI en tiempo real',
-      'Autenticación segura con doble factor',
+      'Alertas automáticas de stock bajo',
+      'Historial completo de entradas y salidas',
+      'Reportes de existencias con un clic',
     ],
   },
   {
@@ -37,7 +37,7 @@ const proyectos: Proyecto[] = [
     etiquetas: ['React', 'TypeScript', 'Java', 'PostgreSQL', 'REST API'],
     color: '#bf00ff',
     icono: '📊',
-    enlaceVivo: 'https://example.com',
+    enlaceVivo: '',
     destacados: [
       'Datos actualizados cada 5 minutos',
       'Exportación a Excel y PDF con un clic',
@@ -47,31 +47,31 @@ const proyectos: Proyecto[] = [
   {
     id: 3,
     titulo: 'App de Gestión para PYME',
-    descripcion: 'Sistema todo-en-uno para que pequeñas y medianas empresas controlen su inventario, ventas, clientes y facturas desde el celular o computadora.',
-    descripcionLarga: 'Solución integral para negocios que antes llevaban todo en hojas de cálculo. Incluye control de inventario con alertas de stock bajo, facturación electrónica CFDI, catálogo de clientes y reportes de ventas mensuales.',
+    descripcion: 'Sistema todo-en-uno para que pequeñas y medianas empresas controlen su inventario, ventas y clientes desde el celular o computadora.',
+    descripcionLarga: 'Solución integral para negocios que antes llevaban todo en hojas de cálculo. Incluye control de inventario con alertas de stock bajo, catálogo de clientes, registro de ventas y reportes mensuales para tomar mejores decisiones.',
     etiquetas: ['React', 'Node.js', 'MySQL', 'JavaScript', 'TypeScript'],
     color: '#00ff88',
     icono: '🏪',
-    enlaceVivo: 'https://example.com',
+    enlaceVivo: '',
     destacados: [
-      'Facturación electrónica CFDI integrada',
       'Control de inventario con alertas automáticas',
+      'Catálogo de clientes y seguimiento de ventas',
       'Funciona en celular, tablet y computadora',
     ],
   },
   {
     id: 4,
-    titulo: 'Módulo de Solicitud de Créditos',
-    descripcion: 'Sistema que digitaliza el proceso de solicitud y aprobación de préstamos, eliminando el papeleo y reduciendo el tiempo de respuesta al cliente.',
-    descripcionLarga: 'Automatización del flujo completo de crédito: el cliente llena su solicitud en línea, el sistema verifica su historial crediticio, calcula su capacidad de pago y pasa la solicitud al área de riesgo con toda la información lista para decidir.',
-    etiquetas: ['Angular', 'Java', 'Spring Boot', 'Sybase', 'REST API'],
+    titulo: 'Control de Pacientes y Citas',
+    descripcion: 'Sistema para consultorios, clínicas y despachos que centraliza el expediente de cada cliente, agenda citas y lleva el historial de visitas en un solo lugar.',
+    descripcionLarga: 'Pensado para profesionales independientes y pequeñas clínicas que manejan todo en papel o WhatsApp. Permite registrar pacientes o clientes con sus datos y notas, agendar citas con recordatorios, y consultar el historial completo de cada persona en segundos.',
+    etiquetas: ['React', 'Node.js', 'MySQL', 'TypeScript', 'REST API'],
     color: '#ff006e',
-    icono: '💳',
-    enlaceVivo: 'https://example.com',
+    icono: '🗂️',
+    enlaceVivo: '',
     destacados: [
-      'Tiempo de respuesta reducido de días a horas',
-      'Integración con buró de crédito',
-      'Documentación digital sin papel',
+      'Expediente digital por paciente o cliente',
+      'Agenda de citas con recordatorios',
+      'Historial completo de visitas y notas',
     ],
   },
   {
@@ -82,7 +82,7 @@ const proyectos: Proyecto[] = [
     etiquetas: ['React', 'TypeScript', 'Node.js', 'MySQL', 'JavaScript'],
     color: '#ffe600',
     icono: '🛒',
-    enlaceVivo: 'https://example.com',
+    enlaceVivo: '',
     destacados: [
       'Pagos con tarjeta, OXXO y transferencia',
       'Panel de administración sin necesidad de técnico',
@@ -97,7 +97,7 @@ const proyectos: Proyecto[] = [
     etiquetas: ['Angular', 'Java', 'PostgreSQL', 'TypeScript', 'REST API'],
     color: '#00f5ff',
     icono: '🎧',
-    enlaceVivo: 'https://example.com',
+    enlaceVivo: '',
     destacados: [
       'Tiempo de resolución reducido 40%',
       'Historial completo del cliente en un clic',
@@ -158,23 +158,25 @@ function TarjetaProyecto({ proyecto, indice }: { proyecto: Proyecto; indice: num
           </div>
 
           {/* Enlace al demo */}
-          <div style={{ display: 'flex', gap: '10px', flexShrink: 0 }} onClick={e => e.stopPropagation()}>
-            <a
-              href={proyecto.enlaceVivo}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Ver demo"
-              style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
-              onMouseEnter={e => (e.currentTarget.style.color = proyecto.color)}
-              onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          </div>
+          {proyecto.enlaceVivo && (
+            <div style={{ display: 'flex', gap: '10px', flexShrink: 0 }} onClick={e => e.stopPropagation()}>
+              <a
+                href={proyecto.enlaceVivo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver demo"
+                style={{ color: 'var(--text-muted)', transition: 'color 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.color = proyecto.color)}
+                onMouseLeave={e => (e.currentTarget.style.color = 'var(--text-muted)')}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          )}
         </div>
 
         {/* Descripción corta */}
