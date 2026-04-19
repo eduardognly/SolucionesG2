@@ -4,6 +4,7 @@ import Inicio from './components/Inicio'
 import SobreMi from './components/SobreMi'
 import Habilidades from './components/Habilidades'
 import Proyectos from './components/Proyectos'
+import Servicios from './components/Servicios'
 import Contacto from './components/Contacto'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <SobreMi />
         <Habilidades />
         <Proyectos />
+        <Servicios />
         <Contacto />
       </main>
       <footer className="footer">
