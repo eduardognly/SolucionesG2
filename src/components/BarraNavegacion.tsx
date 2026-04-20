@@ -192,7 +192,14 @@ export default function BarraNavegacion() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
-                  onClick={() => setMenuAbierto(false)}
+                  onClick={e => {
+                    e.preventDefault()
+                    setMenuAbierto(false)
+                    const id = elemento.href.slice(1)
+                    setTimeout(() => {
+                      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+                    }, 300)
+                  }}
                   style={{
                     padding: '12px 16px',
                     fontFamily: 'var(--font-mono)',
