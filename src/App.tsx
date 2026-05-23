@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
 import BarraNavegacion from './components/BarraNavegacion'
 import Inicio from './components/Inicio'
@@ -6,8 +7,11 @@ import Habilidades from './components/Habilidades'
 import Proyectos from './components/Proyectos'
 import Servicios from './components/Servicios'
 import Contacto from './components/Contacto'
+import Restaurantes from './pages/Restaurantes'
+import Tiendas from './pages/Tiendas'
+import Pymes from './pages/Pymes'
 
-function App() {
+function PaginaInicio() {
   return (
     <div className="app">
       <BarraNavegacion />
@@ -29,6 +33,17 @@ function App() {
         </div>
       </footer>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<PaginaInicio />} />
+      <Route path="/restaurantes" element={<Restaurantes />} />
+      <Route path="/tiendas" element={<Tiendas />} />
+      <Route path="/pymes" element={<Pymes />} />
+    </Routes>
   )
 }
 
