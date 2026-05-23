@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import emailjs from '@emailjs/browser'
+import { trackWhatsApp, trackFormulario } from '../utils/analytics'
 
 interface EstadoFormulario {
   nombre: string
@@ -10,6 +11,11 @@ interface EstadoFormulario {
 }
 
 const formularioInicial: EstadoFormulario = { nombre: '', correo: '', asunto: '', mensaje: '' }
+
+const WA_BASE = 'https://wa.me/525522833604?text='
+const WHATSAPP_URL = WA_BASE + encodeURIComponent('Hola Soluciones G2, me interesa conocer más sobre sus servicios.')
+const WHATSAPP_AGENDA = WA_BASE + encodeURIComponent('Hola Soluciones G2, me interesa agendar una llamada de 15 minutos. ¿Cuándo tienen disponibilidad?')
+const WHATSAPP_DISPLAY = '+52 55 2283 3604'
 
 const infoContacto = [
   {
@@ -23,6 +29,17 @@ const infoContacto = [
     valor: 'solucionesg2.contacto@gmail.com',
     href: 'mailto:solucionesg2.contacto@gmail.com',
     color: '#00f5ff',
+  },
+  {
+    icono: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+      </svg>
+    ),
+    etiqueta: 'WhatsApp',
+    valor: WHATSAPP_DISPLAY,
+    href: WHATSAPP_URL,
+    color: '#00ff88',
   },
   {
     icono: (
@@ -76,6 +93,7 @@ export default function Contacto() {
       )
       setEstado('enviado')
       setFormulario(formularioInicial)
+      trackFormulario('contacto')
       setTimeout(() => setEstado('idle'), 5000)
     } catch {
       setEstado('error')
@@ -140,6 +158,41 @@ export default function Contacto() {
               </span>
             </div>
 
+            {/* Botón Agendar por WhatsApp */}
+            <motion.a
+              href={WHATSAPP_AGENDA}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsApp('contacto-agenda')}
+              initial={{ opacity: 0, x: -20 }}
+              animate={estaEnVista ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.28 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                padding: '14px 22px',
+                borderRadius: '10px',
+                background: 'rgba(0, 255, 136, 0.08)',
+                border: '1px solid rgba(0, 255, 136, 0.3)',
+                textDecoration: 'none',
+                color: '#00ff88',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.88rem',
+                fontWeight: 600,
+                marginBottom: '24px',
+                transition: 'all 0.25s ease',
+              }}
+            >
+              <span style={{ fontSize: '1.1rem' }}>💬</span>
+              Agenda una llamada de 15 min por WhatsApp
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ marginLeft: 'auto', opacity: 0.6 }}>
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+              </svg>
+            </motion.a>
+
             {/* Tarjetas de contacto */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               {infoContacto.map((elemento, i) => (
@@ -154,6 +207,7 @@ export default function Contacto() {
                       href={elemento.href}
                       target={elemento.href.startsWith('http') ? '_blank' : undefined}
                       rel="noopener noreferrer"
+                      onClick={elemento.etiqueta === 'WhatsApp' ? () => trackWhatsApp('contacto-tarjeta') : undefined}
                       className="glass-card"
                       style={{
                         display: 'flex',

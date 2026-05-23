@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solucionesg2.com/sitemap.xml
